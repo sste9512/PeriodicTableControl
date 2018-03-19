@@ -12,14 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using PT_ContextMenu;
 
 namespace PeriodicTableControl
 {
-   
 
 
-    public class PeriodicTableControl : WrapPanel
+    public partial class PeriodicTableControl : UserControl
     {
 
         public static String[] elementSymbol = {
@@ -380,16 +378,6 @@ namespace PeriodicTableControl
 "Oganesson"};
 
 
-
-
-
-
-
-
-
-
-
-
         bool firstRowIsFinished = false;
         bool secondRowIsFinished = false;
         bool thirdRowIsFinished = false;
@@ -397,15 +385,10 @@ namespace PeriodicTableControl
 
 
 
-
-        static PeriodicTableControl()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(PeriodicTableControl), new FrameworkPropertyMetadata(typeof(PeriodicTableControl)));
-        }
-
         public PeriodicTableControl()
         {
-            for (int i = 0; i < 108; i++)
+            InitializeComponent();
+            for (int i = 0; i < fullChemNames.Length; i++)
             {
 
                 if (i == 1 && !firstRowIsFinished)
@@ -420,7 +403,7 @@ namespace PeriodicTableControl
                         border1.Height = 120;
                         border1.Width = 90;
                         border1.Opacity = 0;
-                        this.Children.Add(border1);
+                        wrapper.Children.Add(border1);
                     }
                     firstRowIsFinished = true;
 
@@ -438,7 +421,7 @@ namespace PeriodicTableControl
                         border1.Height = 120;
                         border1.Width = 90;
                         border1.Opacity = 0;
-                        this.Children.Add(border1);
+                        wrapper.Children.Add(border1);
                     }
                     secondRowIsFinished = true;
 
@@ -456,40 +439,20 @@ namespace PeriodicTableControl
                         border1.Height = 120;
                         border1.Width = 90;
                         border1.Opacity = 0;
-                        this.Children.Add(border1);
+                        wrapper.Children.Add(border1);
                     }
                     thirdRowIsFinished = true;
 
                 }
 
 
-               if(i == 57 && thirdRowIsFinished)
+                if (i == 56 && thirdRowIsFinished)
                 {
                     StackPanel stack = new StackPanel();
                     stack.Orientation = Orientation.Horizontal;
                     stack.VerticalAlignment = VerticalAlignment.Bottom;
-                    this.Children.Add(stack);
-                    for (i = 57; i < 71; i++)
-                    {
-                        stack.Children.Add(generateStack(i));
-                       
-                    }
-
-
-
-                }
-                if (i == 89 && thirdRowIsFinished)
-                {
-                    DockPanel dock = new DockPanel();
-                    dock.VerticalAlignment = VerticalAlignment.Bottom;
-                    DockPanel.SetDock(this, Dock.Bottom);
-                    
-                    StackPanel stack = new StackPanel();
-                    dock.Children.Add(stack);
-                    stack.Orientation = Orientation.Horizontal;
-                    stack.VerticalAlignment = VerticalAlignment.Bottom;
-                    //this.Children.Add(stack);
-                    for (i = 89; i < 103; i++)
+                    bottom_wrapper.Children.Add(stack);
+                    for (i = 56; i < 71; i++)
                     {
                         stack.Children.Add(generateStack(i));
 
@@ -498,109 +461,111 @@ namespace PeriodicTableControl
 
 
                 }
-               this.Children.Add(generateStack(i));
-                this.Margin = new Thickness(6, 6, 6, 6);
+                if (i == 88 && thirdRowIsFinished)
+                {
+                  
+                    StackPanel stack = new StackPanel();
+                  
+                    stack.Orientation = Orientation.Horizontal;
+                    stack.VerticalAlignment = VerticalAlignment.Bottom;
+                    bottom_wrapper.Children.Add(stack);
+                    for (i = 88; i < 103; i++)
+                    {
+                        stack.Children.Add(generateStack(i));
 
-              
+                    }
 
 
 
+                }
+                wrapper.Children.Add(generateStack(i));
+               
             }
-
-
-            
-
-
-
-
-
-
         }
-
-
-        public Border generateStack(int i)
-        {
-            Border border = new Border();
-            border.BorderBrush = Brushes.White;
-            border.BorderThickness = new Thickness(1, 1, 1, 1);
-            border.Margin = new Thickness(3, 3, 3, 3);
-
-            StackPanel stack1 = new StackPanel();
-            stack1.Orientation = Orientation.Vertical;
-            stack1.Margin = new Thickness(4, 4, 4, 4);
-            stack1.Width = 80;
-            stack1.Height = 110;
-
-            StackPanel numberStack = new StackPanel();
-            numberStack.Orientation = Orientation.Horizontal;
-
-
-            Label label = new Label();
-            label.Content = i + 1;
-            label.Foreground = Brushes.White;
-            label.HorizontalAlignment = HorizontalAlignment.Left;
-
-
-            numberStack.Children.Add(label);
-            stack1.Children.Add(numberStack);
-
-            StackPanel symbolPanel = new StackPanel();
-            symbolPanel.Orientation = Orientation.Vertical;
-
-            Label symbol = new Label();
-            symbol.Content = elementSymbol[i];
-            symbol.FontSize = 30;
-
-
-            symbol.Foreground = Brushes.White;
-            symbol.HorizontalAlignment = HorizontalAlignment.Center;
-            symbolPanel.Children.Add(symbol);
-
-            Label fullName = new Label();
-            fullName.Content = fullChemNames[i];
-            fullName.FontSize = 12;
-            fullName.Foreground = Brushes.White;
-            fullName.HorizontalAlignment = HorizontalAlignment.Center;
-            symbolPanel.Children.Add(fullName);
-
-            Label atomicWeight = new Label();
-            atomicWeight.Content = molWeights[i];
-            atomicWeight.FontSize = 12;
-            atomicWeight.Foreground = Brushes.White;
-            atomicWeight.HorizontalAlignment = HorizontalAlignment.Center;
-            symbolPanel.Children.Add(atomicWeight);
-            border.Child = stack1;
-            stack1.Children.Add(symbolPanel);
-          
-
-            stack1.MouseEnter += (s, o) =>
+            public Border generateStack(int i)
             {
-
-                border.BorderBrush = Brushes.CadetBlue;
-                border.Background = Brushes.DarkSlateGray;
-
-            };
-            stack1.MouseLeave += (s, o) =>
-            {
-
+                Border border = new Border();
                 border.BorderBrush = Brushes.White;
-                border.Background = Brushes.Transparent;
+                border.BorderThickness = new Thickness(1, 1, 1, 1);
+                border.Margin = new Thickness(3, 3, 3, 3);
 
-            };
-            stack1.MouseDown += (s, o) =>
-            {
-                ContextMenu menu = new ContextMenu();
-                for(int d = 0; d < 10; d++)
+                StackPanel stack1 = new StackPanel();
+                stack1.Orientation = Orientation.Vertical;
+                stack1.Margin = new Thickness(4, 4, 4, 4);
+                stack1.Width = 80;
+                stack1.Height = 110;
+
+                StackPanel numberStack = new StackPanel();
+                numberStack.Orientation = Orientation.Horizontal;
+
+
+                Label label = new Label();
+                label.Content = i + 1;
+                label.Foreground = Brushes.White;
+                label.HorizontalAlignment = HorizontalAlignment.Left;
+
+
+                numberStack.Children.Add(label);
+                stack1.Children.Add(numberStack);
+
+                StackPanel symbolPanel = new StackPanel();
+                symbolPanel.Orientation = Orientation.Vertical;
+
+                Label symbol = new Label();
+                symbol.Content = elementSymbol[i];
+                symbol.FontSize = 30;
+
+
+                symbol.Foreground = Brushes.White;
+                symbol.HorizontalAlignment = HorizontalAlignment.Center;
+                symbolPanel.Children.Add(symbol);
+
+                Label fullName = new Label();
+                fullName.Content = fullChemNames[i];
+                fullName.FontSize = 12;
+                fullName.Foreground = Brushes.White;
+                fullName.HorizontalAlignment = HorizontalAlignment.Center;
+                symbolPanel.Children.Add(fullName);
+
+                Label atomicWeight = new Label();
+                //atomicWeight.Content = molWeights[i];
+                atomicWeight.FontSize = 12;
+                atomicWeight.Foreground = Brushes.White;
+                atomicWeight.HorizontalAlignment = HorizontalAlignment.Center;
+                symbolPanel.Children.Add(atomicWeight);
+                border.Child = stack1;
+                stack1.Children.Add(symbolPanel);
+
+
+                stack1.MouseEnter += (s, o) =>
                 {
-                    MenuItem item = new MenuItem();
-                    item.Header = "This worked";
-                    menu.Items.Add(item);
-                }
-                menu.IsOpen = true;
 
-            };
-          
-            return border;
+                    border.BorderBrush = Brushes.CadetBlue;
+                    border.Background = Brushes.DarkSlateGray;
+
+                };
+                stack1.MouseLeave += (s, o) =>
+                {
+
+                    border.BorderBrush = Brushes.White;
+                    border.Background = Brushes.Transparent;
+
+                };
+                stack1.MouseDown += (s, o) =>
+                {
+                    ContextMenu menu = new ContextMenu();
+                    for (int d = 0; d < 10; d++)
+                    {
+                        MenuItem item = new MenuItem();
+                        item.Header = "This worked";
+                        menu.Items.Add(item);
+                    }
+                    menu.IsOpen = true;
+
+                };
+
+                return border;
+            }
         }
     }
-}
+
