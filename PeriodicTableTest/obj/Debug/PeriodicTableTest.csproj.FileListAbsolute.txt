@@ -1,0 +1,17 @@
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\MainWindow.g.cs
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\App.g.cs
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\PeriodicTableTest_MarkupCompile.cache
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\PeriodicTableTest_MarkupCompile.lref
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\bin\Debug\PeriodicTableTest.exe.config
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\bin\Debug\PeriodicTableTest.exe
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\bin\Debug\PeriodicTableTest.pdb
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\bin\Debug\PeriodicTableControl.dll
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\bin\Debug\PeriodicTableControl.pdb
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\PeriodicTableTest.csprojResolveAssemblyReference.cache
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\MainWindow.baml
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\PeriodicTableTest.g.resources
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\PeriodicTableTest.Properties.Resources.resources
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\PeriodicTableTest.csproj.GenerateResource.Cache
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\PeriodicTableTest.csproj.CoreCompileInputs.cache
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\PeriodicTableTest.exe
+c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableTest\obj\Debug\PeriodicTableTest.pdb
