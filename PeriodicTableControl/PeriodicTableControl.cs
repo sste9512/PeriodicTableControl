@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PT_ContextMenu;
 
 namespace PeriodicTableControl
 {
@@ -588,10 +589,17 @@ namespace PeriodicTableControl
             };
             stack1.MouseDown += (s, o) =>
             {
+                ContextMenu menu = new ContextMenu();
+                for(int d = 0; d < 10; d++)
+                {
+                    MenuItem item = new MenuItem();
+                    item.Header = "This worked";
+                    menu.Items.Add(item);
+                }
+                menu.IsOpen = true;
 
-                MessageBox.Show("This worked");
             };
-
+          
             return border;
         }
     }

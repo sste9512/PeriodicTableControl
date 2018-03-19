@@ -5,3 +5,10 @@ c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableControl\bin\Debug\
 c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableControl\obj\Debug\PeriodicTableControl.Properties.Resources.resources
 c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableControl\obj\Debug\PeriodicTableControl.csproj.GenerateResource.Cache
 c:\users\steve\source\repos\PeriodicTableControl\PeriodicTableControl\obj\Debug\PeriodicTableControl.csproj.CoreCompileInputs.cache
+C:\Users\steve\Desktop\PeriodicControl\PeriodicTableControl\PeriodicTableControl\obj\Debug\PeriodicTableControl.Properties.Resources.resources
+C:\Users\steve\Desktop\PeriodicControl\PeriodicTableControl\PeriodicTableControl\obj\Debug\PeriodicTableControl.csproj.GenerateResource.Cache
+C:\Users\steve\Desktop\PeriodicControl\PeriodicTableControl\PeriodicTableControl\obj\Debug\PeriodicTableControl.csproj.CoreCompileInputs.cache
+C:\Users\steve\Desktop\PeriodicControl\PeriodicTableControl\PeriodicTableControl\obj\Debug\PeriodicTableControl.dll
+C:\Users\steve\Desktop\PeriodicControl\PeriodicTableControl\PeriodicTableControl\obj\Debug\PeriodicTableControl.pdb
+C:\Users\steve\Desktop\PeriodicControl\PeriodicTableControl\PeriodicTableControl\bin\Debug\PeriodicTableControl.dll
+C:\Users\steve\Desktop\PeriodicControl\PeriodicTableControl\PeriodicTableControl\bin\Debug\PeriodicTableControl.pdb
